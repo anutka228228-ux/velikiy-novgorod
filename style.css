@@ -1,0 +1,902 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #4d0b08;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* ПЕРВЫЙ ЭКРАН */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+
+    position: relative;
+    overflow: hidden;
+
+    background: #4d0b08;
+}
+
+
+/* ЛЕВАЯ ЧАСТЬ */
+
+.hero-content {
+    width: 56%;
+
+    min-height: 100vh;
+
+    padding: 70px 60px 70px 7%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: relative;
+    z-index: 2;
+
+    background: #eee5d2;
+}
+
+
+/* ТУРИСТИЧЕСКИЙ МАРШРУТ */
+
+.city-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #8d1715;
+  margin-bottom: 35px;
+}
+
+.city-icon {
+  width: 42px;
+  height: 42px;
+  border: 1px solid #a89472;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #8d1715;
+}
+
+.city-logo strong,
+.city-logo span {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.city-logo span {
+  color: #a89472;
+  margin-top: 3px;
+}.label {
+    color: #a89472;
+
+    font-size: 14px;
+    letter-spacing: 4px;
+
+    margin-bottom: 50px;
+}
+
+
+/* ЗАГОЛОВОК */
+h1 {
+  color: #8d1715;
+  font-size: clamp(38px, 3.5vw, 60px);
+  line-height: 1.05;
+  font-weight: bold;
+  margin-bottom: 40px;
+  white-space: nowrap;
+}
+
+h1 span {
+  display: block;
+  text-align: right;
+}
+
+h1 span {
+    display: block;
+
+    text-align: right;
+}
+
+
+/* ТЕКСТ */
+
+.description {
+    max-width: 650px;
+
+    color: #87302c;
+
+    font-size: 17px;
+
+    line-height: 1.5;
+
+    margin-bottom: 22px;
+}
+
+
+/* КНОПКА */
+
+    .button {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 15px 28px;
+  background: transparent;
+  color: #8d1715;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 2px;
+  border: 1px solid #8d1715;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background: #8d1715;
+  color: #eee5d2;
+  transform: translateX(5px);
+}
+.button {
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+
+/* ПРАВАЯ ЧАСТЬ */
+
+.hero-image {
+    width: 44%;
+    height: 100vh;
+
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.hero-image img {
+    width: 115%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center bottom;
+
+    display: block;
+}
+
+
+/* МОБИЛЬНАЯ ВЕРСИЯ */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 60px 30px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 500px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h1 span {
+        text-align: left;
+    }
+}
+/* ДЕКОРАТИВНАЯ РАМКА */
+.hero-content {
+  margin: 20px;
+  border: 1px solid #b8a789;
+  outline: 1px solid rgba(184, 167, 137, 0.45);
+  outline-offset: -8px;
+}
+.ornament-bottom {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  width: 230px;
+  z-index: 5;
+  pointer-events: none;
+}
+.ornament-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 260px;
+  z-index: 5;
+  pointer-events: none;
+}
+/* ВТОРОЙ ЭКРАН — МАРШРУТ */
+
+.route {
+  min-height: 100vh;
+  padding: 70px 5%;
+  background: #eee5d2;
+  color: #6f1715;
+}
+
+.route-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.route-title span {
+  display: block;
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: #a89472;
+  margin-bottom: 12px;
+}
+
+.route-title strong {
+  display: block;
+  font-size: clamp(30px, 4vw, 52px);
+  line-height: 1;
+}
+
+.route-content {
+  display: flex;
+  gap: 35px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.route-map {
+  flex: 1;
+  min-width: 0;
+  background: #e6dec9;
+  border: 1px solid #b8a789;
+  padding: 12px;
+}
+
+.route-map img {
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  object-fit: cover;
+  display: block;
+}
+
+.route-list {
+  width: 330px;
+  flex-shrink: 0;
+}
+
+.route-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px dotted #a89472;
+}
+
+.route-item span {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #8d1715;
+  color: #eee5d2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.route-item p {
+  margin: 3px 0 0;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #7d2a27;
+}
+
+@media (max-width: 900px) {
+
+  .route {
+    padding: 50px 25px;
+  }
+
+  .route-content {
+    flex-direction: column;
+  }
+
+  .route-list {
+    width: 100%;
+  }
+
+  .route-map img {
+    min-height: 350px;
+  }
+}
+.route {
+  position: relative;
+  overflow: hidden;
+}
+
+.route-frame {
+  position: absolute;
+  inset: 22px;
+  border: 1px solid #a89472;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.route-frame::before,
+.route-frame::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+}
+
+/* левый верхний угол */
+.route-frame::before {
+  top: -1px;
+  left: -1px;
+  border-top: 4px solid #7d1715;
+  border-left: 4px solid #7d1715;
+}
+
+/* правый нижний угол */
+.route-frame::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 4px solid #7d1715;
+  border-bottom: 4px solid #7d1715;
+}
+
+.route-title,
+.route-content {
+  position: relative;
+  z-index: 2;
+}
+/* ТРЕТИЙ ЭКРАН */
+
+.about {
+  position: relative;
+  min-height: 100vh;
+  padding: 55px;
+  background: #5d0b09;
+  color: #eee5d2;
+  overflow: hidden;
+}
+
+.about-frame {
+  position: relative;
+  min-height: calc(100vh - 110px);
+  border: 1px solid #d1c09d;
+  padding: 55px 7%;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.about-title span {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 4px;
+  color: #c7b58f;
+  margin-bottom: 10px;
+}
+
+.about-title strong {
+  display: block;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1;
+  color: #eee5d2;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 420px 1fr;
+  align-items: center;
+  gap: 55px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #eee5d2;
+}
+
+.about-photo {
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #eee5d2;
+  margin: auto;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1100px;
+  margin: 55px auto 0;
+  border-top: 1px solid #b8a789;
+  padding-top: 30px;
+}
+
+.feature {
+  text-align: center;
+  padding: 0 20px;
+  border-right: 1px solid #8b6d5c;
+}
+
+.feature:last-child {
+  border-right: none;
+}
+
+.feature-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: #eee5d2;
+}
+
+.feature span {
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 1px;
+  color: #d6c6a5;
+}
+
+@media (max-width: 900px) {
+  .about {
+    padding: 25px;
+  }
+
+  .about-frame {
+    padding: 40px 25px;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    width: 320px;
+    height: 320px;
+    order: 2;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+
+  .feature:nth-child(2) {
+    border-right: none;
+  }
+}
+/* ФИНАЛЬНАЯ НАСТРОЙКА ТРЕТЬЕГО ЭКРАНА */
+
+.about {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.about-frame {
+  box-sizing: border-box;
+  min-height: calc(100vh - 110px);
+}
+
+.about-content {
+  margin-top: 10px;
+}
+
+.about-text {
+  font-size: 16px;
+}
+
+.about-photo {
+  width: 360px;
+  height: 360px;
+}
+
+.about-features {
+  margin-top: 35px;
+}
+.about-title {
+  position: relative;
+  padding: 0 120px;
+}
+
+.about-title::before,
+.about-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 90px;
+  height: 1px;
+  background: #b8a789;
+}
+
+.about-title::before {
+  left: 0;
+}
+
+.about-title::after {
+  right: 0;
+}
+.about-ornament {
+  position: absolute;
+  width: 240px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.about-ornament-left {
+  left: 0;
+  bottom: 0;
+}
+
+.about-ornament-right {
+  right: 0;
+  bottom: 0;
+  transform: scaleX(-1);
+}
+
+.about-content,
+.about-title,
+.about-features {
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 700px) {
+
+  /* Первый экран */
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    width: auto;
+    margin: 12px;
+    padding: 35px 25px;
+  }
+
+  h1 {
+    font-size: 38px;
+    white-space: normal;
+    margin-bottom: 30px;
+  }
+
+  h1 span {
+    text-align: left;
+  }
+
+  .hero-image {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .hero-image img {
+    width: 100%;
+  }
+
+  /* Второй экран */
+  .route {
+    padding: 45px 20px;
+  }
+
+  .route-content {
+    flex-direction: column;
+  }
+
+  .route-list {
+    width: 100%;
+  }
+
+  .route-title strong {
+    font-size: 34px;
+  }
+
+  /* Третий экран */
+  .about {
+    padding: 20px;
+  }
+
+  .about-frame {
+    padding: 40px 20px;
+  }
+
+  .about-title {
+    padding: 0;
+  }
+
+  .about-title::before,
+  .about-title::after {
+    display: none;
+  }
+
+  .about-title strong {
+    font-size: 42px;
+  }
+
+  .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .about-photo {
+    width: 280px;
+    height: 280px;
+    order: -1;
+  }
+
+  .about-features {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 0;
+  }
+
+  .feature {
+    border-right: none;
+  }
+
+  .about-ornament {
+    width: 140px;
+  }
+}
+.top-menu {
+  position: fixed;
+  top: 20px;
+  right: 35px;
+  z-index: 100;
+  display: flex;
+  gap: 25px;
+}
+
+.top-menu a {
+  color: #eee5d2;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+  transition: color 0.3s ease;
+}
+
+.top-menu a:hover {
+  color: #c7b58f;
+}
+
+@media (max-width: 700px) {
+  .top-menu {
+    display: none;
+  }
+
+  .top-menu a {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}
+.route-item {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.25s ease, padding-left 0.25s ease;
+}
+
+.route-item:hover {
+  background: rgba(141, 23, 21, 0.06);
+  padding-left: 8px;
+}
+/* Страницы достопримечательностей */
+
+.place-page {
+  min-height: 100vh;
+  padding: 35px;
+  background: #5d0b09;
+  color: #eee5d2;
+}
+
+.back-button {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #d1c09d;
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.back-button:hover {
+  color: #ffffff;
+}
+
+.place-frame {
+  min-height: calc(100vh - 120px);
+  border: 1px solid #d1c09d;
+  padding: 60px 7%;
+}
+
+.place-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.place-title span {
+  color: #c7b58f;
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+.place-title h1 {
+  color: #eee5d2;
+  font-size: clamp(40px, 5vw, 70px);
+  line-height: 1;
+  margin-top: 15px;
+}
+
+.place-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1100px;
+  margin: auto;
+  align-items: center;
+}
+
+.place-image {
+  border: 1px solid #b8a789;
+  padding: 10px;
+}
+
+.place-image img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.place-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #eee5d2;
+}
+
+@media (max-width: 700px) {
+  .place-page {
+    padding: 15px;
+  }
+
+  .place-frame {
+    padding: 40px 20px;
+  }
+
+  .place-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .place-title h1 {
+    font-size: 40px;
+  }
+}
+
+/* =================================
+   ГОТОВЫЙ МАКЕТ МАРШРУТА КАРТИНКОЙ
+   ================================= */
+
+.route {
+    padding: 0;
+    min-height: 100vh;
+    background: #eee5d2;
+    position: relative;
+    overflow: hidden;
+}
+
+.route-design {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+}
+
+.route-design > img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Прозрачные кликабельные области */
+
+.hotspot {
+    position: absolute;
+    display: block;
+    z-index: 10;
+    cursor: pointer;
+}
+
+/* Настройка областей */
+
+.hotspot-1 {
+    left: 2.5%;
+    top: 4%;
+    width: 20%;
+    height: 18%;
+}
+
+.hotspot-2 {
+    left: 25%;
+    top: 4%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-3 {
+    left: 49%;
+    top: 4%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-4 {
+    left: 73%;
+    top: 4%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-5 {
+    left: 2.5%;
+    top: 28%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-6 {
+    left: 25%;
+    top: 28%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-7 {
+    left: 49%;
+    top: 28%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-8 {
+    left: 73%;
+    top: 28%;
+    width: 22%;
+    height: 18%;
+}
+
+.hotspot-9 {
+    left: 2.5%;
+    top: 52%;
+    width: 22%;
+    height: 18%;
+}
